@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_simple.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:13:15 by plashkar          #+#    #+#             */
-/*   Updated: 2023/08/16 21:15:22 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/08/23 23:47:20 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,19 @@
 
 void	sort_3(t_stack_node **stack)
 {
-	t_stack_node	*curr;
-	int				min;
-	int				next_min;
+	t_stack_node	*biggest;
+	t_stack_node	*smallest;
 
-	curr = *stack;
-	min = get_min_top_two(&curr, -1);
-	next_min = get_min_top_two(&curr, min);
+	biggest = ft_get_biggest(*stack);
+	smallest = ft_get_smallest(*stack);
 	if (is_sorted(stack))
 		return ;
-	if (curr->index == min && curr->next->index != next_min)
-	{
+	if (*stack == biggest)
+		ra(stack);
+	else if ((*stack)->next == biggest)
 		rra(stack);
+	if (*stack != smallest)
 		sa(*stack);
-	}
-	else if (curr->index == next_min)
-	{
-		if (curr->next->index == min)
-			sa(*stack);
-		else
-			rra(stack);
-	}
-	else
-	{
-		if (curr->next->index == min)
-			ra(stack);
-		else
-		{
-			sa(*stack);
-			rra(stack);
-		}
-	}
 }
 
 void	sort_4(t_stack_node **stack_a, t_stack_node **stack_b)
@@ -57,10 +39,10 @@ void	sort_4(t_stack_node **stack_a, t_stack_node **stack_b)
 	if (distance == 1)
 		ra(stack_a);
 	else if (distance == 2)
-		{
-			ra(stack_a);
-			ra(stack_a);
-		}
+	{
+		ra(stack_a);
+		ra(stack_a);
+	}
 	else if (distance == 3)
 		rra(stack_a);
 	if (is_sorted(stack_a))
@@ -73,6 +55,7 @@ void	sort_4(t_stack_node **stack_a, t_stack_node **stack_b)
 void	sort_5(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	int	distance;
+
 	if (is_sorted(stack_a))
 		return ;
 	distance = distance_from_min(stack_a, get_min_top_two(stack_a, -1));
@@ -97,7 +80,7 @@ void	sort_5(t_stack_node **stack_a, t_stack_node **stack_b)
 	pa(stack_a, stack_b);
 }
 
-void			simple_sort(t_stack_node **stack_a, t_stack_node **stack_b)
+void	simple_sort(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	int	size;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 16:05:32 by plashkar          #+#    #+#             */
-/*   Updated: 2023/08/16 21:00:27 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/08/24 18:22:47 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct t_stack_node
 	int					value;
 	int					index;
 	struct t_stack_node	*next;
+	struct t_stack_node	*target;
 }	t_stack_node;
 
 //List functions
@@ -29,6 +30,8 @@ typedef struct t_stack_node
 int				ft_count_nodes(t_stack_node *root);
 t_stack_node	*ft_find_last_node(t_stack_node *root);
 t_stack_node	*ft_new_list(int value);
+t_stack_node	*ft_get_biggest(t_stack_node *stack);
+t_stack_node	*ft_get_smallest(t_stack_node *stack);
 void			ft_list_addfront(t_stack_node **stack, t_stack_node *new_node);
 void			ft_list_addend(t_stack_node **stack, t_stack_node *new_node);
 int				is_sorted(t_stack_node **stack);
@@ -79,6 +82,7 @@ int				ft_is_num(char *num);
 int				distance_from_min(t_stack_node **stack, int index);
 int				distance_from_max(t_stack_node **stack, int index);
 int				get_min_top_two(t_stack_node **stack, int previous_min);
+void			get_target(t_stack_node *stack_a, t_stack_node *stack_b);
 
 //sort functions
 void			sort_stack(t_stack_node **stack_a, t_stack_node **stack_b);

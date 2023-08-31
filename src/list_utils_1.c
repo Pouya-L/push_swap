@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils_1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:09:21 by plashkar          #+#    #+#             */
-/*   Updated: 2023/08/16 19:16:53 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:38:22 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,20 @@ int	is_sorted(t_stack_node **stack)
 
 void	sort_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	// if (ft_count_nodes(*stack_a) > 5)
-	// 	//RUN ALGORYTHM
-	// 	;
-	// else
+	int	i;
+
+	i = ft_count_nodes(*stack_a);
+	if (ft_count_nodes(*stack_a) > 5)
+	{
+		while (i > 3)
+		{
+			pb(stack_a, stack_b);
+			i--;
+		}
+		sort_3(stack_a);
+		get_target(*stack_a, *stack_b);
+	}
+	else
 		simple_sort(stack_a, stack_b);
 }
 
@@ -49,7 +59,7 @@ void	free_list(t_stack_node **root)
 		curr = curr->next;
 		free(aux);
 	}
-	*root = NULL;
+	free(root);
 }
 
 void	print_stack(t_stack_node *root)

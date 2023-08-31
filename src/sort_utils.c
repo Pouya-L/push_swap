@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:27:06 by plashkar          #+#    #+#             */
-/*   Updated: 2023/08/16 21:10:46 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/08/23 23:42:08 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,32 @@ int	get_min_top_two(t_stack_node **stack, int previous_min)
 			min = curr->index;
 	}
 	return (min);
+}
+
+t_stack_node	*ft_get_biggest(t_stack_node *stack)
+{
+	t_stack_node	*biggest;
+
+	biggest = stack;
+	while (stack && stack->next)
+	{
+		if (stack->next->value > biggest->value)
+			biggest = stack->next;
+		stack = stack->next;
+	}
+	return (biggest);
+}
+
+t_stack_node	*ft_get_smallest(t_stack_node *stack)
+{
+	t_stack_node	*smallest;
+
+	smallest = stack;
+	while (stack && stack->next)
+	{
+		if (stack->next->value < smallest->value)
+			smallest = stack->next;
+		stack = stack->next;
+	}
+	return (smallest);
 }

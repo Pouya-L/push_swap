@@ -3,38 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 20:05:06 by plashkar          #+#    #+#             */
-/*   Updated: 2023/08/16 16:29:07 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:35:55 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+// void	stack_init(t_stack_node **stack, int argc, char **argv)
+// {
+// 	t_stack_node	*new;
+// 	char			**args;
+// 	int				i;
+
+// 	i = 0;
+// 	if (argc == 2)
+// 		args = ft_split(argv[1], ' ');
+// 	else
+// 	{
+// 		i = 1;
+// 		args = argv;
+// 	}
+// 	while (args[i])
+// 	{
+// 		new = ft_new_list(ft_atoi(args[i]));
+// 		ft_list_addend(stack, new);
+// 		i++;
+// 	}
+// 	index_stack(stack);
+// 	if (argc == 2)
+// 		ft_free_string(args);
+// }
 
 void	stack_init(t_stack_node **stack, int argc, char **argv)
 {
 	t_stack_node	*new;
 	char			**args;
 	int				i;
+	int				j;
 
 	i = 0;
-	if (argc == 2)
-		args = ft_split(argv[1], ' ');
-	else
+	while(++i < argc)
 	{
-		i = 1;
-		args = argv;
-	}
-	while (args[i])
-	{
-		new = ft_new_list(ft_atoi(args[i]));
-		ft_list_addend(stack, new);
-		i++;
+		args = ft_split(argv[i], ' ');
+		j = 0;
+		while (args[j])
+		{
+			new = ft_new_list(ft_atoi(args[j]));
+			ft_list_addend(stack, new);
+			j++;
+		}
+		free(args);
 	}
 	index_stack(stack);
-	if (argc == 2)
-		ft_free_string(args);
 }
 
 //indexes the list from the smallest to the largest value on the init phase.
