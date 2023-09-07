@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+         #
+#    By: plashkar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/16 14:11:03 by plashkar          #+#    #+#              #
-#    Updated: 2023/08/31 19:19:11 by plashkar         ###   ########.fr        #
+#    Updated: 2023/09/05 16:38:30 by plashkar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ SRC = \
 	src/stack_init.c \
 	src/check_args.c \
 	src/sort_utils.c \
-	src/sort_complex_utils.c \
+	src/sort_complex_utils_0.c \
+	src/sort_complex_utils_1.c \
 	src/sort_simple.c \
 
 
