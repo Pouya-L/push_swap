@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:23:43 by plashkar          #+#    #+#             */
-/*   Updated: 2023/08/16 16:04:06 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:34:28 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,31 +40,37 @@ int	ft_is_num(char *num)
 	return (1);
 }
 
-void	ft_check_args(int argc, char **argv)
+int	ft_check_args(int argc, char **argv)
 {
-	int		i;
-	long	tmp;
 	char	**args;
 
-	i = 0;
 	if (argc == 2)
 		args = ft_split(argv[1], ' ');
 	else
-	{
-		i = 1;
 		args = argv;
-	}
+	if (ft_check_args_2(args) != 0)
+		return (1);
+	if (argc == 2)
+		ft_free_string(args);
+	return (0);
+}
+
+int	ft_check_args_2(char **args)
+{
+	long	tmp;
+	long	i;
+
+	i = 1;
 	while (args[i])
 	{
 		tmp = ft_atoi(args[i]);
-		if (!ft_is_num(args[i]))
+		if (!ft_is_num(args[i]) || ft_is_repeated(tmp, args, i) || \
+		tmp < -2147483648 || tmp > 2147483647)
+		{
 			ft_printf("Error\n");
-		if (ft_is_repeated(tmp, args, i))
-			ft_printf("Error\n");
-		if (tmp < -2147483648 || tmp > 2147483647)
-			ft_printf("Error\n");
+			return (1);
+		}
 		i++;
 	}
-	if (argc == 2)
-		ft_free_string(args);
+	return (0);
 }

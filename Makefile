@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: plashkar <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/16 14:11:03 by plashkar          #+#    #+#              #
-#    Updated: 2023/09/05 16:38:30 by plashkar         ###   ########.fr        #
+#    Updated: 2023/09/07 17:42:38 by plashkar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,28 +40,33 @@ SRC = \
 
 OBJ = $(SRC:.c=.o)
 
+%.o: %.c
+	@$(CC) $(FLAG) $(INCLUDE) -o $@ -c $<
+
 all: $(NAME)
 
 $(NAME): $(PUSH_LIB) $(OBJ)
-	@$(CC) $(FLAG) $(INCLUDE) src/main.c  $(OBJ) $(LIBFT_A) $(PUSH_LIB) -o $(NAME)
-	@echo push_swap has been created.
+	@echo "Compiling $@"
+	@$(CC) $(FLAG) $(INCLUDE) src/main.c  $(OBJ) $(LIBFT_A) $(PUSH_LIB) -o $(NAME) > /dev/null
+	@echo "push_swap has been created."
 
 $(PUSH_LIB): $(OBJ)
-	@make -C $(LIBFT_DIR)
-	@ar rcs $(PUSH_LIB) $(OBJ) $(LIBFT_A)
-	@echo push_swap.a has been created.
+	@echo "Creating $@"
+	@make -C $(LIBFT_DIR) > /dev/null
+	@ar rcs $(PUSH_LIB) $(OBJ) $(LIBFT_A) > /dev/null
+	@echo The library push_swap.a has been created.
 
 clean:
 	@rm -f src/*.o
 	@rm -f bonus/*.o
-	@make -C $(LIBFT_DIR) clean
+	@make -C $(LIBFT_DIR) clean > /dev/null
 	@echo Object files have been deleted.
 
 
 fclean: clean
 	@rm -f $(PUSH_LIB)
 	@rm -f $(NAME)
-	@make -C $(LIBFT_DIR) fclean
+	@make -C $(LIBFT_DIR) fclean > /dev/null
 	@echo All created files have been deleted.
 
 re: fclean all

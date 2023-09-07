@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:27:06 by plashkar          #+#    #+#             */
-/*   Updated: 2023/08/23 23:42:08 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:36:13 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	distance_from_min(t_stack_node **stack, int index)
 	return (distance);
 }
 
-int	distance_from_max(t_stack_node **stack, int index)
+int	distance_from_max(t_stack_node **stack)
 {
 	t_stack_node	*curr;
 	t_stack_node	*highest_value_node;

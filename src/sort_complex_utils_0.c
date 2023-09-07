@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_complex_utils_0.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:35:21 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/05 17:03:45 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:45:54 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,21 +65,22 @@ void	ft_cost(t_stack_node *stack)
 	}
 }
 
-void	ft_total_cost(t_stack_node *stack_b)
-{
-	size_t	upup;
-	size_t	downdown;
-	size_t	updown;
-	size_t	downup;
+// void	ft_total_cost(t_stack_node *stack_b)
+// {
+// 	// size_t	upup;
+// 	// size_t	downdown;
+// 	// size_t	updown;
+// 	// size_t	downup;
 
-	while (stack_b)
-	{
-		 
-
+// 	// while (stack_b)
+// 	// {
 
 
 
 
-		stack_b = stack_b->next;
-	}
-}
+
+
+// 	// 	stack_b = stack_b->next;
+// 	// }
+// }
+
