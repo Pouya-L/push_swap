@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 19:05:26 by plashkar          #+#    #+#             */
-/*   Updated: 2023/08/14 17:28:09 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/07 18:19:14 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <fcntl.h>
+# include <stdio.h>
 
 //Part 1 - Libc functions
 
@@ -76,6 +78,16 @@ int		ft_print_ptr(unsigned long long ptr);
 
 int		digitcnt_base(unsigned int num, unsigned int base);
 void	put_number_base(unsigned int n, unsigned int base, char format);
+
+//Part 4 - get_next_line_bonus functions
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+char	*get_next_line(int fd);
+char	*ft_strjoin_nl(char *line, char *buffer);
+int		ft_is_new_line(char *buffer);
 
 //Bonus part
 

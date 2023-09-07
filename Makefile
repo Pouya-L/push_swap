@@ -6,7 +6,7 @@
 #    By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/16 14:11:03 by plashkar          #+#    #+#              #
-#    Updated: 2023/09/07 17:42:38 by plashkar         ###   ########.fr        #
+#    Updated: 2023/09/07 21:35:53 by plashkar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,9 @@ SRC = \
 	src/sort_utils.c \
 	src/sort_complex_utils_0.c \
 	src/sort_complex_utils_1.c \
+	src/sort_complex_utils_2.c \
 	src/sort_simple.c \
+	src/sort_complex_algo.c \
 
 
 OBJ = $(SRC:.c=.o)

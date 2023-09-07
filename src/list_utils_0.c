@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils_0.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 15:52:35 by plashkar          #+#    #+#             */
-/*   Updated: 2023/08/16 16:07:29 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:46:17 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 //Counts the number of elements in the list and returns is as an int.
-int	ft_count_nodes(t_stack_node *root)
+size_t	ft_count_nodes(t_stack_node *root)
 {
 	t_stack_node	*curr;
-	int				i;
+	size_t			i;
 
 	i = 0;
 	curr = root;

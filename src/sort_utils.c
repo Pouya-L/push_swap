@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:27:06 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/07 17:36:13 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:48:31 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	distance_from_max(t_stack_node **stack)
 	curr = *stack;
 	while (curr)
 	{
-		if (curr->index == ft_count_nodes(*stack))
+		if (curr->index == (int)ft_count_nodes(*stack))
 			break ;
 		curr = curr->next;
 	}

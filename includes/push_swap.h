@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 16:05:32 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/07 17:40:02 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:47:53 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ typedef struct t_stack_node
 	int					value;
 	int					index;
 	int					position;
-	int					up_cost;
-	int					down_cost;
-	int					total_cost;
+	size_t				up_cost;
+	size_t				down_cost;
+	size_t				total_cost;
 	int					command_to_run;
 	struct t_stack_node	*next;
 	struct t_stack_node	*target;
@@ -41,7 +41,7 @@ typedef struct t_stack_node
 
 //List functions
 
-int				ft_count_nodes(t_stack_node *root);
+size_t			ft_count_nodes(t_stack_node *root);
 t_stack_node	*ft_find_last_node(t_stack_node *root);
 t_stack_node	*ft_new_list(int value);
 t_stack_node	*ft_get_biggest(t_stack_node *stack);
@@ -93,8 +93,8 @@ int				ft_check_args(int argc, char **argv);
 int				ft_check_args_2(char **args);
 int				ft_is_repeated(int tmp, char **argv, int i);
 int				ft_is_num(char *num);
-size_t			ft_compare_and_get_biggest(size_t args, ...);
-size_t			ft_compare_and_get_smallest(size_t args, ...);
+size_t			compare_biggest(size_t args, ...);
+size_t			compare_smallest(size_t args, ...);
 
 //sort utils
 int				distance_from_min(t_stack_node **stack, int index);
@@ -103,8 +103,16 @@ int				get_min_top_two(t_stack_node **stack, int previous_min);
 void			get_target(t_stack_node *stack_a, t_stack_node *stack_b);
 void			ft_smallest_bigger(t_stack_node *stack_a_curr, t_stack_node *stack_b);
 void			ft_cost(t_stack_node *stack);
-// void			ft_total_cost(t_stack_node *stack_b);
-// void			refresh_stacks(t_stack_node *stack_a, t_stack_node *stack_b);
+void			ft_total_cost(t_stack_node *stack_b);
+void			refresh_stacks(t_stack_node *stack_a, t_stack_node *stack_b);
+t_stack_node	*cheapest_to_top(t_stack_node *stack_b);
+
+//To top funtions
+void	top(t_stack_node **stack_a, t_stack_node **stack_b, t_stack_node *cheap);
+void	rtop(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap);
+void	rrtop(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap);
+void	updown(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap);
+void	downup(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap);
 
 //sort functions
 void			sort_stack(t_stack_node **stack_a, t_stack_node **stack_b);
@@ -112,5 +120,6 @@ void			sort_3(t_stack_node **stack);
 void			sort_4(t_stack_node **stack_a, t_stack_node **stack_b);
 void			sort_5(t_stack_node **stack_a, t_stack_node **stack_b);
 void			simple_sort(t_stack_node **stack_a, t_stack_node **stack_b);
-
+void			complex_sort(t_stack_node **stack_a, t_stack_node **stack_b);
+void			final_sort_a(t_stack_node **stack_a);
 #endif

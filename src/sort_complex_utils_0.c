@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:35:21 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/07 17:45:54 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:18:55 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	get_target(t_stack_node *stack_a, t_stack_node *stack_b)
 			stack_b = stack_b->next;
 			continue ;
 		}
-		while(stack_a_curr)
+		while (stack_a_curr)
 		{
 			if (stack_a_curr->value < stack_b->value)
 				stack_a_curr = stack_a_curr->next;
@@ -65,22 +65,28 @@ void	ft_cost(t_stack_node *stack)
 	}
 }
 
-// void	ft_total_cost(t_stack_node *stack_b)
-// {
-// 	// size_t	upup;
-// 	// size_t	downdown;
-// 	// size_t	updown;
-// 	// size_t	downup;
+void	ft_total_cost(t_stack_node *stack_b)
+{
+	size_t	unu;
+	size_t	dnd;
+	size_t	updown;
+	size_t	downup;
 
-// 	// while (stack_b)
-// 	// {
-
-
-
-
-
-
-// 	// 	stack_b = stack_b->next;
-// 	// }
-// }
-
+	while (stack_b)
+	{
+		unu = compare_biggest(2, stack_b->target->up_cost, stack_b->up_cost);
+		dnd = compare_biggest(2, stack_b->target->down_cost, stack_b->down_cost);
+		updown = stack_b->target->up_cost + stack_b->down_cost;
+		downup = stack_b->target->down_cost + stack_b->up_cost;
+		stack_b->total_cost = compare_smallest(4, unu, dnd, updown, downup);
+		if (stack_b->total_cost == unu)
+			stack_b->command_to_run = UPUP;
+		else if (stack_b->total_cost == dnd)
+			stack_b->command_to_run = DOWNDOWN;
+		else if (stack_b->total_cost == updown)
+			stack_b->command_to_run = UPDOWN;
+		else if (stack_b->total_cost == downup)
+			stack_b->command_to_run = DOWNUP;
+		stack_b = stack_b->next;
+	}
+}
