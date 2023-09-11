@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_complex_algo.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:59:00 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/11 13:34:48 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/11 15:04:54 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	complex_sort(t_stack_node **stack_a, t_stack_node **stack_b)
 		refresh_stacks(*stack_a, *stack_b);
 	}
 	final_sort_a(stack_a);
-	print_stack(*stack_a);
 }
 
 t_stack_node	*cheapest_to_top(t_stack_node *stack_b)
