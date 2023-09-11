@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:59:00 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/07 22:18:45 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/11 09:51:39 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void	complex_sort(t_stack_node **stack_a, t_stack_node **stack_b)
 	}
 	sort_3(stack_a);
 	refresh_stacks(*stack_a, *stack_b);
-	while (stack_b)
+	while (*stack_b)
 	{
 		top(stack_a, stack_b, cheapest_to_top(*stack_b));
 		pa (stack_a, stack_b);
-		refresh_stacks(*stack_a, *stack_a);
+		refresh_stacks(*stack_a, *stack_b);
 	}
 	final_sort_a(stack_a);
 }

@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 21:07:04 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/07 21:43:34 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/11 09:39:32 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	top(t_stack_node **stack_a, t_stack_node **stack_b, t_stack_node *cheap)
 	if (cheap->command_to_run == DOWNDOWN)
 		rrtop(stack_a, stack_b, cheap);
 	if (cheap->command_to_run == UPDOWN)
-		updown(stack_a, stack_a, cheap);
+		updown(stack_a, stack_b, cheap);
 	if (cheap->command_to_run == DOWNUP)
 		downup(stack_a, stack_b, cheap);
 }
@@ -100,12 +100,12 @@ void	downup(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap)
 
 	stack_a_downcost = cheap->target->down_cost;
 	stack_b_upcost = cheap->up_cost;
-	while (stack_a_downcost < 0)
+	while (stack_a_downcost > 0)
 	{
 		ra(stk_a);
 		stack_a_downcost--;
 	}
-	while (stack_b_upcost < 0)
+	while (stack_b_upcost > 0)
 	{
 		rb(stk_b);
 		stack_b_upcost--;
