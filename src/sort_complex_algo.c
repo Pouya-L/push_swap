@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:59:00 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/11 09:51:39 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:34:48 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	complex_sort(t_stack_node **stack_a, t_stack_node **stack_b)
 		refresh_stacks(*stack_a, *stack_b);
 	}
 	final_sort_a(stack_a);
+	print_stack(*stack_a);
 }
 
 t_stack_node	*cheapest_to_top(t_stack_node *stack_b)
@@ -54,16 +55,33 @@ void	final_sort_a(t_stack_node **stack_a)
 
 	smallest = ft_get_smallest(*stack_a);
 	smallest_pos = smallest->position;
-	if (smallest_pos < ft_count_nodes(*stack_a)/2)
-		while (smallest_pos > 0)
+	if (smallest_pos <= ft_count_nodes(*stack_a) / 2)
+	{
+		while (smallest_pos > 1)
 		{
 			ra(stack_a);
 			smallest_pos--;
 		}
+	}
 	else
-		while(smallest_pos < ft_count_nodes(*stack_a))
+	{
+		while (smallest_pos <= ft_count_nodes(*stack_a))
 		{
 			rra(stack_a);
 			smallest_pos++;
 		}
+	}
 }
+
+// void	final_sort_a(t_stack_node **stack_a)
+// {
+// 	t_stack_node	*smallest;
+
+// 	smallest = ft_get_smallest(*stack_a);
+// 	if (smallest->up_cost <= smallest->down_cost)
+// 		while (smallest->up_cost-- > 0)
+// 			ra(stack_a);
+// 	else
+// 		while(smallest->down_cost-- > 0)
+// 			rra(stack_a);
+// }

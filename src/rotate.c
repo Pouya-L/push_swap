@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 17:05:45 by plashkar          #+#    #+#             */
-/*   Updated: 2023/08/16 14:47:10 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/11 11:51:03 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ void	rr(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);
-	ft_printf("ra\n");
+	ft_printf("rr\n");
 }

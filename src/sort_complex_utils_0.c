@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:35:21 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/11 09:43:43 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:21:01 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,11 @@ void	ft_total_cost(t_stack_node *stack_b)
 
 	while (stack_b)
 	{
-		unu = compare_biggest(2, stack_b->target->up_cost, stack_b->up_cost);
-		dnd = compare_biggest(2, stack_b->target->down_cost, stack_b->down_cost);
+		unu = compare_big(2, stack_b->target->up_cost, stack_b->up_cost);
+		dnd = compare_big(2, stack_b->target->down_cost, stack_b->down_cost);
 		updown = stack_b->target->up_cost + stack_b->down_cost;
 		downup = stack_b->target->down_cost + stack_b->up_cost;
-		stack_b->total_cost = compare_smallest(4, unu, dnd, updown, downup);
+		stack_b->total_cost = compare_small(4, unu, dnd, updown, downup);
 		if (stack_b->total_cost == unu)
 			stack_b->command_to_run = UPUP;
 		else if (stack_b->total_cost == dnd)

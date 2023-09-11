@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 16:05:32 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/07 21:47:53 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:37:55 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ typedef struct t_stack_node
 # define DOWNDOWN 2
 # define UPDOWN 3
 # define DOWNUP 4
-
 
 //List functions
 
@@ -93,26 +92,33 @@ int				ft_check_args(int argc, char **argv);
 int				ft_check_args_2(char **args);
 int				ft_is_repeated(int tmp, char **argv, int i);
 int				ft_is_num(char *num);
-size_t			compare_biggest(size_t args, ...);
-size_t			compare_smallest(size_t args, ...);
+size_t			compare_big(size_t args, ...);
+size_t			compare_small(size_t args, ...);
+void			print_info(t_stack_node *stack);
 
 //sort utils
 int				distance_from_min(t_stack_node **stack, int index);
 int				distance_from_max(t_stack_node **stack);
 int				get_min_top_two(t_stack_node **stack, int previous_min);
 void			get_target(t_stack_node *stack_a, t_stack_node *stack_b);
-void			ft_smallest_bigger(t_stack_node *stack_a_curr, t_stack_node *stack_b);
+void			ft_smallest_bigger(t_stack_node *stack_a_curr, \
+				t_stack_node *stack_b);
 void			ft_cost(t_stack_node *stack);
 void			ft_total_cost(t_stack_node *stack_b);
 void			refresh_stacks(t_stack_node *stack_a, t_stack_node *stack_b);
 t_stack_node	*cheapest_to_top(t_stack_node *stack_b);
 
 //To top funtions
-void	top(t_stack_node **stack_a, t_stack_node **stack_b, t_stack_node *cheap);
-void	rtop(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap);
-void	rrtop(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap);
-void	updown(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap);
-void	downup(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap);
+void			top(t_stack_node **stack_a, t_stack_node **stack_b, \
+				t_stack_node *cheap);
+void			rtop(t_stack_node **stk_a, t_stack_node **stk_b, \
+				t_stack_node *cheap);
+void			rrtop(t_stack_node **stk_a, t_stack_node **stk_b, \
+				t_stack_node *cheap);
+void			updown(t_stack_node **stk_a, t_stack_node **stk_b, \
+				t_stack_node *cheap);
+void			downup(t_stack_node **stk_a, t_stack_node **stk_b, \
+				t_stack_node *cheap);
 
 //sort functions
 void			sort_stack(t_stack_node **stack_a, t_stack_node **stack_b);

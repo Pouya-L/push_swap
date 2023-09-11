@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:37:11 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/07 22:13:42 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:20:52 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	refresh_stacks(t_stack_node *stack_a, t_stack_node *stack_b)
 	ft_total_cost(stack_b);
 }
 
-size_t	compare_biggest(size_t args, ...)
+size_t	compare_big(size_t args, ...)
 {
 	va_list	variable_list;
 	size_t	biggest;
@@ -30,7 +30,7 @@ size_t	compare_biggest(size_t args, ...)
 
 	va_start(variable_list, args);
 	biggest = va_arg(variable_list, size_t);
-	while(--args > 0)
+	while (--args > 0)
 	{
 		temp_compare = va_arg(variable_list, size_t);
 		if (temp_compare > biggest)
@@ -39,7 +39,7 @@ size_t	compare_biggest(size_t args, ...)
 	return (biggest);
 }
 
-size_t	compare_smallest(size_t args, ...)
+size_t	compare_small(size_t args, ...)
 {
 	va_list	variable_list;
 	size_t	smallest;
