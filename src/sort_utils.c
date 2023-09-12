@@ -6,13 +6,13 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:27:06 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/12 11:40:22 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/12 12:04:14 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-//gets the distance of the node from the node with the minmum value
+//Gets the distance of the node from the node with the minmum value
 int	distance_from_min(t_stack_node **stack, int index)
 {
 	t_stack_node	*curr;
@@ -67,7 +67,7 @@ int	ft_strcmp(char *str_1, char *str_2)
 // 	return (distance);
 // }
 
-//this function is used to find the smallest node, and if we run it again -
+//This function is used to find the smallest node, and if we run it again -
 //we can find the second smallest value, but that's it.
 int	get_min_top_two(t_stack_node **stack, int previous_min)
 {
@@ -85,7 +85,7 @@ int	get_min_top_two(t_stack_node **stack, int previous_min)
 	return (min);
 }
 
-//gets the node with the biggest value
+//Gets the node with the biggest value
 t_stack_node	*ft_get_biggest(t_stack_node *stack)
 {
 	t_stack_node	*biggest;
@@ -100,7 +100,7 @@ t_stack_node	*ft_get_biggest(t_stack_node *stack)
 	return (biggest);
 }
 
-//gets the node with the smallest value
+//Gets the node with the smallest value
 t_stack_node	*ft_get_smallest(t_stack_node *stack)
 {
 	t_stack_node	*smallest;
