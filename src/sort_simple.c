@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:13:15 by plashkar          #+#    #+#             */
-/*   Updated: 2023/08/23 23:47:20 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:40:09 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void	sort_5(t_stack_node **stack_a, t_stack_node **stack_b)
 	pa(stack_a, stack_b);
 }
 
+//Sorts the arguments, used for 5 or less arguments
 void	simple_sort(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	int	size;

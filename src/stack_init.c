@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 20:05:06 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/11 13:19:41 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:30:04 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	index_stack(t_stack_node **stack)
 	}
 }
 
+//sets the position of nodes on the stack
 void	ft_set_position(t_stack_node *stack)
 {
 	size_t	position;
@@ -42,9 +43,9 @@ void	ft_set_position(t_stack_node *stack)
 	}
 }
 
-//find the node with the minimum value and return a pointer to it,
-// int has_min is to keep it going in the very first step -
-//- since we can not compare anything with NULL./
+//Finds the node with the minimum value and return a pointer to it,
+// int has_min is to keep it going in the very first step
+//since we can not compare anything with NULL./
 t_stack_node	*get_next_min(t_stack_node **stack)
 {
 	t_stack_node	*curr;
@@ -69,6 +70,8 @@ t_stack_node	*get_next_min(t_stack_node **stack)
 	return (min);
 }
 
+//Initializes the stack and turns the arguments from chars to ints using atol*
+//if in "" splits the arguments using /space/ as the factor
 void	stack_init(t_stack_node **stack, int argc, char **argv)
 {
 	t_stack_node	*new;
@@ -94,8 +97,7 @@ void	stack_init(t_stack_node **stack, int argc, char **argv)
 		ft_free_string(args);
 }
 
-//Print the position, cost, index,
-
+//Print the position,individual cost, total cost, index, and command to run
 void	print_info(t_stack_node *stack)
 {
 	while (stack)

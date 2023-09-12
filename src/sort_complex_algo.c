@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   sort_complex_algo.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:59:00 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/11 15:04:54 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:56:37 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+//Used to sort more than 5 argument
+//first it pushes all but 3 elements to stack_b, then it sorts the three elems
+//then it checks what command to run to bring the cheapest and its target top
+//then it pushes the top of stack_b to stack_a and refreshes nodes
+//finally it runs finals_sort_a.
 void	complex_sort(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	size_t	i;
@@ -33,6 +38,8 @@ void	complex_sort(t_stack_node **stack_a, t_stack_node **stack_b)
 	final_sort_a(stack_a);
 }
 
+//finds the node in stack b with the lowest total cost to top
+//to be used in top function.
 t_stack_node	*cheapest_to_top(t_stack_node *stack_b)
 {
 	t_stack_node	*cheapest;
@@ -47,6 +54,8 @@ t_stack_node	*cheapest_to_top(t_stack_node *stack_b)
 	return (cheapest);
 }
 
+//finds the smallest node in stack_a & sorts the stack_a by rotating it
+//so that the smallest node is on the top
 void	final_sort_a(t_stack_node **stack_a)
 {
 	t_stack_node	*smallest;
@@ -72,6 +81,7 @@ void	final_sort_a(t_stack_node **stack_a)
 	}
 }
 
+//!different version of final_sort_a!
 // void	final_sort_a(t_stack_node **stack_a)
 // {
 // 	t_stack_node	*smallest;

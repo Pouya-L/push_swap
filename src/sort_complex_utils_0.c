@@ -6,12 +6,13 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:35:21 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/11 13:21:01 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:50:25 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+//Finds the smallest bigger element in the stack_a to help find the targets
 void	ft_smallest_bigger(t_stack_node *stack_a_curr, t_stack_node *stack_b)
 {
 	while (stack_a_curr)
@@ -23,6 +24,9 @@ void	ft_smallest_bigger(t_stack_node *stack_a_curr, t_stack_node *stack_b)
 	}
 }
 
+//Sets the target node in stack_a for each of the elements in stack_b
+//we find the target so we can later send both the element and target
+//to the top to sort the stack.
 void	get_target(t_stack_node *stack_a, t_stack_node *stack_b)
 {
 	t_stack_node	*stack_a_curr;
@@ -52,6 +56,8 @@ void	get_target(t_stack_node *stack_a, t_stack_node *stack_b)
 	}
 }
 
+//Calculates the individual cost of bringing a node in stack_b to top
+//it sets up_cost and down_cost
 void	ft_cost(t_stack_node *stack)
 {
 	int	list_len;
@@ -65,6 +71,8 @@ void	ft_cost(t_stack_node *stack)
 	}
 }
 
+//Calculates the total cost of bringing node in stack_b and its target to top
+//checks if cheaper to bring them to the top using rotate vs reverse rotate
 void	ft_total_cost(t_stack_node *stack_b)
 {
 	size_t	unu;

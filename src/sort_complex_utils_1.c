@@ -6,12 +6,14 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:37:11 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/11 13:20:52 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:43:17 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+//Resreshes the stacks and sets the correct info to the nodes.
+//It MUST be run after any change in the order of the nodes in stacks
 void	refresh_stacks(t_stack_node *stack_a, t_stack_node *stack_b)
 {
 	ft_set_position(stack_a);
@@ -22,6 +24,8 @@ void	refresh_stacks(t_stack_node *stack_a, t_stack_node *stack_b)
 	ft_total_cost(stack_b);
 }
 
+//Compares however many arguments you put in it and returns the biggest.
+//args is the number of argumetns you want to compare
 size_t	compare_big(size_t args, ...)
 {
 	va_list	variable_list;
@@ -39,6 +43,8 @@ size_t	compare_big(size_t args, ...)
 	return (biggest);
 }
 
+//Compares however many arguments you put in it and returns the smallest.
+//args is the number of argumetns you want to compare
 size_t	compare_small(size_t args, ...)
 {
 	va_list	variable_list;

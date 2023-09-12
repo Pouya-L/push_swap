@@ -6,12 +6,13 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 21:07:04 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/11 11:13:20 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:39:55 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+//Checks the command to run of the cheapest node to top, runs the respective ft
 void	top(t_stack_node **stack_a, t_stack_node **stack_b, t_stack_node *cheap)
 {
 	if (cheap->command_to_run == UPUP)
@@ -24,6 +25,8 @@ void	top(t_stack_node **stack_a, t_stack_node **stack_b, t_stack_node *cheap)
 		downup(stack_a, stack_b, cheap);
 }
 
+//UPUP; brings cheapest and its target to the top by rotating them up
+//using rotate functions (ra, rb or rr)
 void	rtop(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap)
 {
 	size_t	stack_a_upcost;
@@ -49,6 +52,8 @@ void	rtop(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap)
 	}
 }
 
+//DOWNDOWN; brings cheapest and its target to the top by rotating them down
+//using reverse rotate functions (rra, rrb or rr)
 void	rrtop(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap)
 {
 	size_t	stack_a_downcost;
@@ -74,6 +79,9 @@ void	rrtop(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap)
 	}
 }
 
+//Brings the cheapest and its target to the top by moving them down and up each
+//uses ra to move the node in stack a to the top
+//and uses rrb to move the node in stack b to the top
 void	updown(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap)
 {
 	size_t	stack_a_upcost;
@@ -93,6 +101,9 @@ void	updown(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap)
 	}
 }
 
+//Brings the cheapest and its target to the top by moving them up and down each
+//uses rra to move the node in stack a to the top
+//and uses rb to move the node in stack b to the top
 void	downup(t_stack_node **stk_a, t_stack_node **stk_b, t_stack_node *cheap)
 {
 	size_t	stack_a_downcost;

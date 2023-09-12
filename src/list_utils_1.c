@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:09:21 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/07 21:41:10 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:57:40 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	is_sorted(t_stack_node **stack)
 	return (1);
 }
 
+//Runs simple_sort or complex_sort depending on the size of stack_a.
 void	sort_stack(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	if (ft_count_nodes(*stack_a) > 5)
@@ -51,6 +52,7 @@ void	free_list(t_stack_node **root)
 	free(root);
 }
 
+//Prints the stack
 void	print_stack(t_stack_node *root)
 {
 	t_stack_node	*curr;

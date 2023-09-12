@@ -6,12 +6,13 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:23:43 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/12 10:58:59 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/12 12:01:12 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+//Checks if the number was repeated before in the list of arguments
 int	ft_is_repeated(int tmp, char **argv, int i)
 {
 	i++;
@@ -24,6 +25,7 @@ int	ft_is_repeated(int tmp, char **argv, int i)
 	return (0);
 }
 
+//Checks if it's a number (it can also notice minus sign and ignore it)
 int	ft_is_num(char *num)
 {
 	int	i;
@@ -40,6 +42,8 @@ int	ft_is_num(char *num)
 	return (1);
 }
 
+//Checks the arguments for not acceptable arguments and returns error
+//Errors include: repeated numbers, numbers out of range, anything but numbers
 int	ft_check_args(int argc, char **argv)
 {
 	char	**args;
@@ -55,6 +59,7 @@ int	ft_check_args(int argc, char **argv)
 	return (0);
 }
 
+//Part two of check_args since it coudn't fit in 25 lines
 int	ft_check_args_2(char **args)
 {
 	long	tmp;
