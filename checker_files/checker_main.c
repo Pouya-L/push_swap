@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_main.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:15:00 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/11 16:26:23 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/12 10:54:56 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	main(int argc, char **argv)
 {
 	t_stack_node	**stack_a_check;
 	t_stack_node	**stack_b_check;
-	int				len;
 	char			*next_line;
 
 	stack_a_check = malloc(sizeof(t_stack_node));
@@ -27,11 +26,11 @@ int	main(int argc, char **argv)
 		return (-1);
 	if (ft_check_args(argc, argv))
 		return (0);
-	stack_init(stack_a_check, 2, argv + 1);
+	stack_init(stack_a_check, argc, argv);
 	next_line = get_next_line(STDIN_FILENO);
 	while (next_line)
 	{
-		//parse_command
+		parsing(stack_a_check, stack_b_check, next_line);
 		next_line = get_next_line(STDIN_FILENO);
 	}
 	ft_ok_or_ko(stack_a_check, stack_b_check);

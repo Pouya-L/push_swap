@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plashkar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 16:05:32 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/11 16:44:42 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/12 10:33:18 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,20 +131,22 @@ void			final_sort_a(t_stack_node **stack_a);
 
 //checker functions
 
-void	pa_c(t_stack_node **stack_a, t_stack_node **stack_b);
-void	pb_c(t_stack_node **stack_a, t_stack_node **stack_b);
-void	sa_c(t_stack_node *tail_a);
-void	sb_c(t_stack_node *tail_b);
-void	ss_c(t_stack_node *tail_a, t_stack_node *tail_b);
-void	rra_c(t_stack_node **stack_a);
-void	rrb_c(t_stack_node **stack_b);
-void	rrr_c(t_stack_node **stack_a, t_stack_node **stack_b);
-void	ra_c(t_stack_node **stack_a);
-void	rb_c(t_stack_node **stack_b);
-void	rr_c(t_stack_node **stack_a, t_stack_node **stack_b);
-void	ft_ok_or_ko(t_stack_node **stack_a, t_stack_node **stack_b);
-int		ft_strcmp(char *str_1, char *str_2);
-void	ft_error_checker(t_stack_node **stack_a, t_stack_node **stack_b);
-void	parsing(t_stack_node **stack_a, t_stack_node **stack_b, char *command_to_run);
+void			pa_c(t_stack_node **stack_a, t_stack_node **stack_b);
+void			pb_c(t_stack_node **stack_a, t_stack_node **stack_b);
+void			sa_c(t_stack_node *tail_a);
+void			sb_c(t_stack_node *tail_b);
+void			ss_c(t_stack_node *tail_a, t_stack_node *tail_b);
+void			rra_c(t_stack_node **stack_a);
+void			rrb_c(t_stack_node **stack_b);
+void			rrr_c(t_stack_node **stack_a, t_stack_node **stack_b);
+void			ra_c(t_stack_node **stack_a);
+void			rb_c(t_stack_node **stack_b);
+void			rr_c(t_stack_node **stack_a, t_stack_node **stack_b);
+void			ft_ok_or_ko(t_stack_node **stack_a, t_stack_node **stack_b);
+int				ft_strcmp(char *str_1, char *str_2);
+void			ft_error_checker(t_stack_node **stack_a, \
+				t_stack_node **stack_b);
+void			parsing(t_stack_node **stack_a, t_stack_node **stack_b, \
+				char *command_to_run);
 
 #endif

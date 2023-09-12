@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: plashkar <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/16 14:11:03 by plashkar          #+#    #+#              #
-#    Updated: 2023/09/11 15:40:19 by plashkar         ###   ########.fr        #
+#    Updated: 2023/09/12 10:13:34 by plashkar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,18 +40,24 @@ SRC = \
 	src/sort_complex_algo.c \
 
 CHECKER = \
-	checker/checker_utils.C \
-	checker/checker.C
-	checker/push_and_swap_checker.c \
-	checker/reverse_rotate_checker.c \
-	checker/rotate_checker.c \
+	checker_files/checker_utils.c \
+	checker_files/push_and_swap_checker.c \
+	checker_files/reverse_rotate_checker.c \
+	checker_files/rotate_checker.c \
 
 OBJ = $(SRC:.c=.o)
+
+BOBJS = $(CHECKER:.c=.o)
 
 %.o: %.c
 	@$(CC) $(FLAG) $(INCLUDE) -o $@ -c $<
 
 all: $(NAME)
+
+bonus: $(PUSH_LIB) $(OBJ) $(BOBJS)
+	@echo "Compiling $@"
+	@$(CC) $(FLAG) $(INCLUDE) checker_files/checker_main.c  $(OBJ) $(BOBJS) $(LIBFT_A) $(PUSH_LIB) -o checker > /dev/null
+	@echo "checker has been created."
 
 $(NAME): $(PUSH_LIB) $(OBJ)
 	@echo "Compiling $@"
@@ -66,7 +72,7 @@ $(PUSH_LIB): $(OBJ)
 
 clean:
 	@rm -f src/*.o
-	@rm -f bonus/*.o
+	@rm -f checker_files/*.o
 	@make -C $(LIBFT_DIR) clean > /dev/null
 	@echo Object files have been deleted.
 
@@ -74,6 +80,7 @@ clean:
 fclean: clean
 	@rm -f $(PUSH_LIB)
 	@rm -f $(NAME)
+	@rm -f checker
 	@make -C $(LIBFT_DIR) fclean > /dev/null
 	@echo All created files have been deleted.
 

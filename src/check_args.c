@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:23:43 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/07 17:34:28 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/12 10:58:59 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,11 @@ int	ft_check_args_2(char **args)
 	i = 1;
 	while (args[i])
 	{
+		if (!ft_strcmp(args[i], ""))
+		{
+			ft_printf("Error\n");
+			return (1);
+		}
 		tmp = ft_atoi(args[i]);
 		if (!ft_is_num(args[i]) || ft_is_repeated(tmp, args, i) || \
 		tmp < -2147483648 || tmp > 2147483647)

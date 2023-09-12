@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:27:06 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/07 21:48:31 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:03:46 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,31 +30,41 @@ int	distance_from_min(t_stack_node **stack, int index)
 	return (distance);
 }
 
-int	distance_from_max(t_stack_node **stack)
+int	ft_strcmp(char *str_1, char *str_2)
 {
-	t_stack_node	*curr;
-	t_stack_node	*highest_value_node;
-	int				distance;
-
-	distance = 0;
-	curr = *stack;
-	while (curr)
+	while (*str_1 == *str_2 && *str_1)
 	{
-		if (curr->index == (int)ft_count_nodes(*stack))
-			break ;
-		curr = curr->next;
+		++str_1;
+		++str_2;
 	}
-	highest_value_node = curr;
-	curr = *stack;
-	while (curr)
-	{
-		if (curr->index == highest_value_node->index)
-			break ;
-		distance++;
-		curr = curr->next;
-	}
-	return (distance);
+	return (*str_1 - *str_2);
 }
+
+// int	distance_from_max(t_stack_node **stack)
+// {
+// 	t_stack_node	*curr;
+// 	t_stack_node	*highest_value_node;
+// 	int				distance;
+
+// 	distance = 0;
+// 	curr = *stack;
+// 	while (curr)
+// 	{
+// 		if (curr->index == (int)ft_count_nodes(*stack))
+// 			break ;
+// 		curr = curr->next;
+// 	}
+// 	highest_value_node = curr;
+// 	curr = *stack;
+// 	while (curr)
+// 	{
+// 		if (curr->index == highest_value_node->index)
+// 			break ;
+// 		distance++;
+// 		curr = curr->next;
+// 	}
+// 	return (distance);
+// }
 
 //this function is used to find the smallest node, and if we run it again -
 //we can find the second smallest value, but that's it.
