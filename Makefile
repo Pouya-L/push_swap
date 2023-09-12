@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+         #
+#    By: plashkar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/16 14:11:03 by plashkar          #+#    #+#              #
-#    Updated: 2023/09/07 21:35:53 by plashkar         ###   ########.fr        #
+#    Updated: 2023/09/11 15:40:19 by plashkar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,12 @@ SRC = \
 	src/sort_simple.c \
 	src/sort_complex_algo.c \
 
+CHECKER = \
+	checker/checker_utils.C \
+	checker/checker.C
+	checker/push_and_swap_checker.c \
+	checker/reverse_rotate_checker.c \
+	checker/rotate_checker.c \
 
 OBJ = $(SRC:.c=.o)
 
