@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:23:43 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/14 10:37:08 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:03:04 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ int	ft_is_num(char *num)
 
 	i = 0;
 	if (num[0] == '-' || num[0] == '+')
+	{
 		i++;
+		if (!num[i])
+			return (0);
+	}
 	while (num[i])
 	{
 		if (!ft_isdigit(num[i]))
@@ -51,9 +55,13 @@ int	ft_check_args(int argc, char **argv)
 	if (argc == 2)
 		args = ft_split(argv[1], ' ');
 	else
-		args = argv;
+		args = &(argv[1]);
 	if (ft_check_args_2(args) != 0)
+	{
+		if (argc == 2)
+			ft_free_string(args);
 		return (1);
+	}
 	if (argc == 2)
 		ft_free_string(args);
 	return (0);
@@ -65,7 +73,7 @@ int	ft_check_args_2(char **args)
 	long	tmp;
 	long	i;
 
-	i = 1;
+	i = 0;
 	while (args[i])
 	{
 		if (!ft_strcmp(args[i], ""))

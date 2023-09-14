@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:09:21 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/12 11:57:40 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/14 11:52:27 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,5 @@ void	ft_free_string(char **str)
 		i++;
 	while (i >= 0)
 		free(str[i--]);
+	free(str);
 }
