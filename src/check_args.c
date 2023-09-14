@@ -6,7 +6,7 @@
 /*   By: plashkar <plashkar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:23:43 by plashkar          #+#    #+#             */
-/*   Updated: 2023/09/14 12:03:04 by plashkar         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:14:37 by plashkar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_is_repeated(int tmp, char **argv, int i)
 	return (0);
 }
 
-//Checks if it's a number (it can also notice minus sign and ignore it)
+//Checks if it's a number (it can also notice '-' & '+' signs and ignore it)
 int	ft_is_num(char *num)
 {
 	int	i;
