@@ -70,7 +70,7 @@ make fclean
 make re
 ```
 #### Usage
-after comiling it run it with the list of integers to be sorted as arguments. i.e. This will output if the program doesn't run into any problems:
+after comiling it run it with the list of integers to be sorted as arguments. i.e. The output is going to be each of the operation codes followed by a `\n`.
 ```
 ./push_swap 3 1 2
 ```
