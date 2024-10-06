@@ -74,3 +74,4 @@ after comiling it run it with the list of integers to be sorted as arguments. i.
 ```
 ./push_swap 3 1 2
 ```
+[![forthebadge](https://forthebadge.com/images/badges/made-with-c.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
